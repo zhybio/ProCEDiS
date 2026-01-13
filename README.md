@@ -18,7 +18,7 @@ ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research 
 ProCEDiS relies on OpenFold (included as a git submodule). First, clone this repository with submodules and follow the **OpenFold repository instructions** to install OpenFold. After OpenFold is working, install the additional dependencies used by ProCEDiS:
 
 ```bash
-git clone --recurse-submodules git@github.com:zhybio/ProCEDiS.git
+git clone --recurse-submodules https://github.com/zhybio/ProCEDiS.git
 cd ProCEDiS
 # If you already cloned without submodules:
 # git submodule update --init --recursive
