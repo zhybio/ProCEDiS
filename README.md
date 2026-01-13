@@ -4,12 +4,6 @@ ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research 
 
 ![ProCEDiS overview](figures/ProCEDiS.png "Dynamics path")
 
-## Key ideas
-- **State-annotation-free** conformational discovery from sequence and MSA.
-- **Neural-surrogate–assisted** exploration of MSA recombination space.
-- **Structure modeling** using AlphaFold2/OpenFold-style predictors.
-- **Parallel short-timescale MD** on selected seeds for crude free-energy profiling and representative state identification.
-
 ## Repository layout
 - `01_1_msa_cluster.py`, `01_2_fold_cluster_results.py`  
   MSA clustering and folding/aggregation utilities.
@@ -21,31 +15,19 @@ ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research 
   Utilities, learning components, and OpenFold/AF2-related wrappers.
 
 ## Installation (minimal)
-This project relies on OpenFold. Please install OpenFold following upstream instructions, then install the additional dependencies required by ProCEDiS.
+ProCEDiS relies on OpenFold (included as a git submodule). First, clone this repository with submodules and follow the **OpenFold repository instructions** to install OpenFold. After OpenFold is working, install the additional dependencies used by ProCEDiS:
 
-1) Install OpenFold (see the `openfold` submodule).  
-2) Install ProCEDiS extras:
 ```bash
-conda install scikit-learn mdtraj -c conda-forge
+git clone --recurse-submodules <PROCEDIS_REPO_URL>
+cd ProCEDiS
+# If you already cloned without submodules:
+# git submodule update --init --recursive
+
+conda install -c conda-forge scikit-learn mdtraj
 pip install ray
 ```
 
-## OpenFold submodule
-This repository uses a minimally modified OpenFold fork as a git submodule.
-
-Clone with submodules:
-
-```bash
-git clone --recurse-submodules https://github.com/zhybio/openfold-procedis.git
-```
-
-If you already cloned:
-
-```bash
-git submodule update --init --recursive
-```
-
-## Quick start (skeleton)
+## Quick start
 A typical workflow is:
 
 1. Prepare inputs under `inputs/`
@@ -78,9 +60,17 @@ python 03_3_md_simulation.py --gpus="0,1"
 python 03_4_extract_protein_traj.py
 ```
 
-## Notes and limitations
-- The MD-derived free-energy estimate is intended to be **quick and crude**, not a converged thermodynamic calculation.
-- Results may depend on model weights, MSA construction, and compute environment.
+6. Rank and extract representative energy basins (optional)
+To identify diverse low-energy basins and pick representative structures, see the notebook:
+- `notebook/basin_rank.ipynb`
+
+This notebook uses `find_diverse_basins(...)` to iteratively locate multiple low-energy basins on the 2D energy surface and select representative frames. You can adjust:
+
+- `n_basins`: number of distinct basins to extract
+- `mask_radius`: radius (in bins) masked around each selected basin to enforce diversity
+- `n_per_basin`: number of low-energy bins/frames to keep per basin
+
+After selecting basins/frames, you can export representative structures for downstream inspection and visualization.
 
 ## Citation
 If you use ProCEDiS in academic work, please cite the accompanying paper (to be added). 
