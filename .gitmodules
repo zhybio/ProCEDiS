@@ -1,3 +1,3 @@
 [submodule "openfold"]
 	path = openfold
-	url = git@github.com:zhybio/openfold-procedis.git
+	url = https://github.com/zhybio/openfold-procedis.git
