@@ -4,8 +4,6 @@ ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research 
 
 ![ProCEDiS overview](figures/ProCEDiS.png "Dynamics path")
 
-> Research code under active development. Interfaces, defaults, and file layouts may change.
-
 ## Key ideas
 - **State-annotation-free** conformational discovery from sequence and MSA.
 - **Neural-surrogate–assisted** exploration of MSA recombination space.
