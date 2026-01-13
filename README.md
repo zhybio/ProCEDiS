@@ -60,7 +60,7 @@ python 03_3_md_simulation.py --gpus="0,1"
 python 03_4_extract_protein_traj.py
 ```
 
-6. Rank and extract representative energy basins (optional)
+6. Rank and extract representative energy basins (optional)  
 To identify diverse low-energy basins and pick representative structures, see the notebook:
 - `notebook/basin_rank.ipynb`
 
