@@ -26,6 +26,15 @@ cd ProCEDiS
 conda install -c conda-forge scikit-learn mdtraj
 pip install ray
 ```
+01_1_msa_cluster.py requires the NCBI taxonomy lineage table, which can be downloaded by:
+```bash
+wget https://zenodo.org/records/18231270/files/ncbi_tax_species.zip -O ./ncbi_tax_species.zip 
+```
+then:
+```bash
+unzip -o ncbi_tax_species.zip
+# it should create: ./ncbi_tax_species.csv
+```
 
 ## Quick start
 A typical workflow is:
