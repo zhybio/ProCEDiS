@@ -82,7 +82,22 @@ This notebook uses `find_diverse_basins(...)` to iteratively locate multiple low
 After selecting basins/frames, you can export representative structures for downstream inspection and visualization.
 
 ## Citation
-If you use ProCEDiS in academic work, please cite the accompanying paper (to be added). 
+If you use ProCEDiS in academic work, please cite the accompanying paper:
+```
+@article {Zhou2026.01.14.699462,
+	author = {Zhou, Hanyang and Yu, Hongyu and Yau, Stephen S.-T and Gong, Haipeng},
+	title = {Constructing the ensemble of representative structures for a protein via neural-surrogate-guided MSA recombination},
+	elocation-id = {2026.01.14.699462},
+	year = {2026},
+	doi = {10.64898/2026.01.14.699462},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2026/01/15/2026.01.14.699462},
+	eprint = {https://www.biorxiv.org/content/early/2026/01/15/2026.01.14.699462.full.pdf},
+	journal = {bioRxiv}
+}
+
+```
+
 You may also need to cite upstream OpenFold/AlphaFold2 and relevant dependencies as appropriate.
 
 ## License
