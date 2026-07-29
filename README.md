@@ -1,6 +1,6 @@
 # ProCEDiS
 
-ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research framework for generating a compact ensemble of representative protein conformations **without prior state annotations**. It explores MSA recombination guided by a neural surrogate, models candidate structures with AlphaFold2-derived predictors, and optionally runs parallel short-timescale molecular dynamics (MD) simulations on selected structure seeds to obtain a quick (crude) free-energy estimate and identify physically plausible representative states.
+ProCEDiS (Protein Conformation Ensemble of Dissimilar Structures) is a research framework for generating a compact ensemble of representative protein conformations **without prior state annotations**. It explores MSA recombination guided by a neural surrogate, models candidate structures with AlphaFold2-derived predictors, and optionally runs parallel short-timescale molecular dynamics (MD) simulations on selected structure seeds to obtain a quick (crude) free-energy estimate and identify physically plausible representative state.
 
 ![ProCEDiS overview](figures/ProCEDiS.png "Dynamics path")
 
